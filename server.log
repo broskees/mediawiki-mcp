@@ -1,0 +1,7 @@
+2025/12/16 23:36:45 Starting MediaWiki MCP Server v1.0.0
+2025/12/16 23:36:45 Config: Port=8080, RateLimit=10.0 req/s, CacheTTL=5m0s
+2025/12/16 23:36:45 Server listening on :8080
+2025/12/16 23:36:45 MCP endpoint: http://localhost:8080/mcp
+2025/12/16 23:36:45 Health check: http://localhost:8080/health
+2025/12/16 23:37:28 Shutting down...
+2025/12/16 23:37:28 Server stopped
