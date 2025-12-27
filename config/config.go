@@ -18,8 +18,14 @@ type Config struct {
 
 // Load reads configuration from environment variables with sensible defaults
 func Load() *Config {
+	// Railway sets PORT, but we also check MCP_PORT for backward compatibility
+	port := getEnv("PORT", "")
+	if port == "" {
+		port = getEnv("MCP_PORT", "8080")
+	}
+
 	return &Config{
-		Port:           getEnv("MCP_PORT", "8080"),
+		Port:           port,
 		RateLimit:      getEnvFloat("MCP_RATE_LIMIT", 10.0),
 		CacheTTL:       getEnvDuration("MCP_CACHE_TTL", 300),
 		CacheTTLInfo:   getEnvDuration("MCP_CACHE_TTL_INFO", 3600),
